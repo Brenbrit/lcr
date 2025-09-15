@@ -2,7 +2,7 @@
 Brendan's [LCR](https://www.georgeandcompany.co/products/lcr-dice-game) simulator and visualizer.
 
 ## Requirements
-- [uv](https://docs.astral.sh/uv/)
+- [uv](https://docs.astral.sh/uv/) (optional)
 
 ## Building
 ```
@@ -19,6 +19,11 @@ Brendan's [LCR](https://www.georgeandcompany.co/products/lcr-dice-game) simulato
 (lcr) $ lcr-sim/target/release/lcr-sim --players 10 --games 1000 -s | ./viz.py results.png
 (lcr) $ xdg-open results.png
 ```
+### Get the best position for a given player count
+```
+(lcr) ./best_position.py <num players>
+```
+- Note that the default player count is 100M. This takes ~45s on my Ryzen 7800X3D. You can change `NUM_GAMES` in the shell script if you'd like to change the game count.
 
 ## Notes
 - Except for turn order, LCR is a pure-luck game. This means you should probably simulate many more games than I've shown in the examples above (I recomment at least 10 million).
